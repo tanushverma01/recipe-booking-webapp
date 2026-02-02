@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Recipe Booking App Design System
+   Warm, appetizing color palette inspired by fresh ingredients and home cooking
+*/
+
+@layer base {
+  :root {
+    /* Warm cream background */
+    --background: 35 30% 98%;
+    --foreground: 25 30% 12%;
+
+    /* Card surfaces with subtle warmth */
+    --card: 35 25% 99%;
+    --card-foreground: 25 30% 12%;
+
+    --popover: 35 25% 99%;
+    --popover-foreground: 25 30% 12%;
+
+    /* Terracotta/Coral primary - warm and appetizing */
+    --primary: 16 85% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Sage green secondary - fresh herbs */
+    --secondary: 145 25% 92%;
+    --secondary-foreground: 145 35% 25%;
+
+    /* Cream muted tones */
+    --muted: 35 20% 94%;
+    --muted-foreground: 25 15% 45%;
+
+    /* Golden accent - honey/warmth */
+    --accent: 38 90% 55%;
+    --accent-foreground: 38 90% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 16 85% 55%;
+
+    --radius: 0.75rem;
+
+    /* Custom recipe-specific colors */
+    --herb: 145 40% 40%;
+    --herb-light: 145 35% 92%;
+    --spice: 25 80% 50%;
+    --cream: 40 30% 96%;
+    --warm-brown: 25 40% 25%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(16 85% 55% / 0.9), hsl(38 90% 55% / 0.8));
+    --gradient-card: linear-gradient(180deg, hsl(35 30% 99%), hsl(35 25% 97%));
+    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsl(25 30% 12% / 0.7) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(25 30% 12% / 0.08);
+    --shadow-medium: 0 8px 30px -8px hsl(25 30% 12% / 0.12);
+    --shadow-elevated: 0 20px 50px -15px hsl(25 30% 12% / 0.15);
+
+    --sidebar-background: 35 25% 97%;
+    --sidebar-foreground: 25 30% 25%;
+    --sidebar-primary: 16 85% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 35 20% 94%;
+    --sidebar-accent-foreground: 25 30% 25%;
+    --sidebar-border: 35 20% 88%;
+    --sidebar-ring: 16 85% 55%;
+  }
+
+  .dark {
+    --background: 25 25% 8%;
+    --foreground: 35 20% 95%;
+
+    --card: 25 22% 12%;
+    --card-foreground: 35 20% 95%;
+
+    --popover: 25 22% 12%;
+    --popover-foreground: 35 20% 95%;
+
+    --primary: 16 75% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 145 20% 18%;
+    --secondary-foreground: 145 25% 85%;
+
+    --muted: 25 20% 18%;
+    --muted-foreground: 35 15% 60%;
+
+    --accent: 38 80% 50%;
+    --accent-foreground: 38 90% 95%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 25 20% 20%;
+    --input: 25 20% 20%;
+    --ring: 16 75% 58%;
+
+    --herb: 145 35% 50%;
+    --herb-light: 145 25% 20%;
+    --spice: 25 70% 55%;
+    --cream: 35 20% 15%;
+    --warm-brown: 35 25% 80%;
+
+    --sidebar-background: 25 22% 10%;
+    --sidebar-foreground: 35 20% 90%;
+    --sidebar-primary: 16 75% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 25 20% 16%;
+    --sidebar-accent-foreground: 35 20% 90%;
+    --sidebar-border: 25 20% 18%;
+    --sidebar-ring: 16 75% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-hero);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .glass {
+    @apply backdrop-blur-md bg-background/80;
+  }
+}
